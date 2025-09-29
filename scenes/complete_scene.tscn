@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqoruspyckcq7"]
+
+[ext_resource type="Script" uid="uid://bvgtsawkb5mbi" path="res://complete_scene.gd" id="1_nsv82"]
+[ext_resource type="Texture2D" uid="uid://cm4lcmeqfkcnn" path="res://charactor/1.png" id="2_201se"]
+[ext_resource type="FontFile" uid="uid://dlxh2b23ydut0" path="res://fonts/Montserrat-Medium.ttf" id="3_q7unk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jdd1b"]
+font = ExtResource("3_q7unk")
+font_size = 70
+font_color = Color(1, 0, 1, 1)
+
+[node name="Complete_scene" type="Node2D"]
+script = ExtResource("1_nsv82")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_201se")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -193.5
+offset_top = 108.0
+offset_right = 193.5
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "จบเกมแล้วครับ"
+label_settings = SubResource("LabelSettings_jdd1b")
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.9893473, 0, 0.27478215, 1)
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

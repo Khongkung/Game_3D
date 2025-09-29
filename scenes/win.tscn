@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvisrjal6obdc"]
+
+[ext_resource type="Script" uid="uid://b4kf4hmo3jyom" path="res://win.gd" id="1_r4oei"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_826fv"]
+height = 1.2158203
+radius = 0.58935547
+
+[node name="win" type="Area3D"]
+script = ExtResource("1_r4oei")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.29374272, 0, 0, 0, 1, 0, 0.16795544, 0)
+shape = SubResource("CylinderShape3D_826fv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
